@@ -1,0 +1,59 @@
+optimizer:
+  name: Adam
+  params:
+    lr: 1.0e-3
+    betas: [0.9, 0.98]
+
+loss: SequentialBCEWithLogitsLoss
+
+metrics:
+  - Precision
+  - Recall
+  - F1
+  - MAP
+  - NDCG
+  - MRR
+
+log_params:
+  on_epoch: True
+  on_step: False
+
+/step_routing:
+  loss_input_from_batch:
+    target: relevance
+  metrics_input_from_batch:
+    Precision:
+      relevance: relevance
+    Recall:
+      relevance: relevance
+    F1:
+      relevance: relevance
+    MAP:
+      relevance: relevance
+    NDCG:
+      relevance: relevance
+    MRR:
+      relevance: relevance
+  metrics_input_from_model_output:
+    Precision:
+      scores: null
+    Recall:
+      scores: null
+    F1:
+      scores: null
+    MAP:
+      scores: null
+    NDCG:
+      scores: null
+    MRR:
+      scores: null
+
++loader_params: loader_params_cfg
+
++trainer_params: trainer_params_cfg
+
++emission_tracker: emission_tracker_cfg
+
++flops_profiler: flops_profiler_cfg
+
++rec_model: SASRec  #NARM #BERT4Rec  #SASRec #GRU4Rec #CORE

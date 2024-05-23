@@ -1,0 +1,6 @@
++data_params: data_cfg
+
++model: model #cnn
+
+__exp__:
+    name: First_run

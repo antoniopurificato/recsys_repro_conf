@@ -1,0 +1,39 @@
+name: ml-100k #[amazon_beauty, ml-100k, ml-1m, ml-20m, steam, foursquare-nyc, foursquare-tky] #the name of the dataset
+/data_folder: ../data/raw/  #path of the dataset
+
+# preprocessing
+# whether to keep items with low rating
+min_rating: 0 #the minimum rating of the dataset
+
+#whether to filter the items with low frequency
+min_items_per_user: 5 #the minimum number of items rated by a user
+min_users_per_item: 5 #the minimum number of users that have rated an item
+
+densify_index: True #whether to densify the index of the dataset
+
+dataset_params:
+  split_keys:
+      train: [sid, uid]
+      val: [sid, uid]
+      test: [sid, uid]
+collator_params:
+  sequential_keys: [sid] #timestamp, rating #the sequential keys of the dataset
+  padding_value: 0 #the padding value for the dataset
+  £lookback: #the lookback of the dataset
+    default: 200 
+    values: [20, 50, 100, 200] 
+  lookforward: 1 #the lookforward of the dataset
+  simultaneous_lookforward: 1 #the simultaneous lookforward of the dataset
+  out_seq_len: # Number of predictions to keep (i.e. not masked as padding) --> to avoid train/test leakage
+    train: null #the output sequence length of the training set
+    val: &val_size 1 #the output sequence length of the validation set
+    test: &test_size 1 #the output sequence length of the test set
+  num_negatives:
+    train: 1
+    val: 1
+    test: 100
+
+split_method: leave_n_out #the split method of the dataset, including 'leave_n_out', 'hold_out', 'k_fold'
+test_sizes: [*test_size,*val_size] #"n" for leave_n_out the number of (positive) samples for each user in the test set
+
+# random_state: 42 #the random seed for splitting the dataset

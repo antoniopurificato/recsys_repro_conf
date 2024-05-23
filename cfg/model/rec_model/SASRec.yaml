@@ -1,0 +1,13 @@
+name: SASRec
+
+num_blocks: 2
+£emb_size:
+  default: 50
+  values: [32, 64, 128, 256, 512]
+num_heads: 1
+dropout_rate: 0.5 
+
+^/step_routing:
+  model_input_from_batch: ["in_sid", "out_sid"]
+  loss_input_from_model_output:
+    input: null

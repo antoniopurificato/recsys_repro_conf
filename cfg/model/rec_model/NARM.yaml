@@ -1,0 +1,19 @@
+name: NARM
+
+hidden_size: 50
+£emb_size:
+  default: 50
+  values: [32, 64, 128, 256, 512]
+n_layers: 1
+emb_dropout: 0.25
+ct_dropout: 0.5
+
+^/step_routing:
+  model_input_from_batch: ["in_sid", "out_sid"]
+  loss_input_from_model_output:
+    input: null
+
+__global__:
+  data_params.collator_params.keep_last.train: 1
+  data_params.collator_params.keep_last.val: null
+  data_params.collator_params.keep_last.test: null

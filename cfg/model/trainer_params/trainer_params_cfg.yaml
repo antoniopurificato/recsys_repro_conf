@@ -1,0 +1,17 @@
+accelerator: cuda #cuda #cpu
+/enable_checkpointing: True
+max_epochs: 400 #601
+callbacks:
+    - ModelCheckpoint:
+        /dirpath: ${__exp__.project_folder}out/models/${__exp__.name}/
+        /filename: best
+        save_top_k: 1
+        save_last: True
+        monitor: val_loss/dataloader_idx_0 #val_loss
+        mode: min
+    - TimeCallback:
+        log_params: ${model.log_params}
+/logger:
+    name: CSVLogger
+    params:
+        save_dir: ${__exp__.project_folder}out/log/${__exp__.name}/

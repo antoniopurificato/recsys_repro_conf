@@ -1,0 +1,15 @@
+name: GRU4Rec
+
+hidden_size: 100
+num_layers: 1
+
+dropout_hidden: 0.0
+dropout_input: 0.2
+£emb_size:
+  default: 50
+  values: [32, 64, 128, 256, 512]
+
+^/step_routing:
+  model_input_from_batch: ["in_sid", "out_sid"]
+  loss_input_from_model_output:
+    input: null

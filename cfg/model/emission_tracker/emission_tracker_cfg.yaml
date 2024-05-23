@@ -1,0 +1,3 @@
+tracking_mode: process
+log_level: critical
+/output_dir: ${__exp__.project_folder}out/log/${__exp__.name}/

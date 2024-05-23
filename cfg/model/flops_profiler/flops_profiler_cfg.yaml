@@ -1,0 +1,1 @@
+/output_dir: ${__exp__.project_folder}out/log/${__exp__.name}/

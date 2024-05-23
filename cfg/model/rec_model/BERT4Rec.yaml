@@ -1,0 +1,24 @@
+name: BERT4Rec
+
+£emb_size:
+  default: 52
+  values: [32, 64, 128, 256, 512]
+bert_num_blocks: 2
+bert_num_heads: 4
+dropout_rate: 0.1
+
+
+^/step_routing:
+  model_input_from_batch: ["in_sid", "out_sid"]
+  loss_input_from_model_output:
+    input: null
+
+# ^loader_params:
+#   # num_negatives:
+#   #   train: 0
+#   #   val: 0
+#   mask_prob: 0.15
+
+__global__:
+  data_params.collator_params.lookforward: 0
+  data_params.collator_params.mask_prob: 0.15
