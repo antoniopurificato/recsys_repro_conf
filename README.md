@@ -68,7 +68,7 @@ To run our code follow the next steps:
 
 - Select the right directory;
 
-``cd recsys_repro && unzip recsys_repro_conf-D117``
+``cd recsys_repro && unzip recsys_repro_conf-4771``
 
 - Install the necessary requirements.
 
