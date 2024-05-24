@@ -40,7 +40,7 @@ Below is an outline of key files and folders you'll find in this project, along 
       - trainer_params_cfg: accelerator, number of epochs, logger to save files.
       - loader_params_cfg: batch size, number of workers, number of negatives.
       - emission_tracker: configuration for [CodeCarbon](https://codecarbon.io/).
-      - flops_profiler: configuration for [DeepSpeed])(https://deepspeed.readthedocs.io/en/latest/index.html).
+      - flops_profiler: configuration for [DeepSpeed](https://deepspeed.readthedocs.io/en/latest/index.html).
       - rec_models: specific configurations for each model.
 2. **ntb**
     - Houses a notebook for training and testing a Sequential Recommender System on a dataset.
