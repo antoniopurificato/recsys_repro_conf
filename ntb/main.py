@@ -36,7 +36,7 @@ deepspeed.init_distributed(dist_backend=None, distributed_port=29480)
 
 
 # ## Define paths
-
+project_folder = "../"
 # In[5]:
 
 #Config folder should contain hyperparameters configurations
