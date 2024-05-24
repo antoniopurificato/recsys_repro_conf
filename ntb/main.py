@@ -19,19 +19,6 @@ if connect_to_drive:
     from google.colab import drive
     drive.mount('/content/gdrive', force_remount=True)
 
-
-# ## Install packages
-
-# In[3]:
-
-
-if connect_to_drive:
-    #Install FS code
-    get_ipython().system('pip install  --upgrade --force-reinstall git+https://github.com/PokeResearchLab/easy_lightning.git')
-
-    get_ipython().system('pip install pytorch_lightning')
-
-
 # ## IMPORTS
 
 # In[4]:
