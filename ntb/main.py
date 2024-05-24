@@ -39,13 +39,6 @@ deepspeed.init_distributed(dist_backend=None, distributed_port=29480)
 
 # In[5]:
 
-
-#every path should start from the project folder:
-project_folder = "../"
-if connect_to_drive:
-    project_folder = "/content/gdrive/Shareddrives/RecSys Reproducibility"#"/content/gdrive/MyDrive/PhD/Lavori/Explainability/Fluorophores separation"
-    #project_folder = "/content/gdrive/MyDrive/<MyDriveName>" #Name of MyDrive folder
-
 #Config folder should contain hyperparameters configurations
 cfg_folder = os.path.join(project_folder,"cfg")
 
