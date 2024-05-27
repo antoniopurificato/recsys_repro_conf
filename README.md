@@ -61,7 +61,7 @@ To run our code follow the next steps:
 
 ``cd .. && pip3 install --upgrade --force-reinstall easy_lightning/ > /dev/null 2>&1``
 
-- Create the folder `recsys_posneg`.
+- Create the folder `recsys_repro`.
 
 ``mkdir recsys_repro``
 - Download **this repo**. As before, it can't be cloned. Insert the zip in the folder `recsys_repro`.
@@ -76,6 +76,6 @@ To run our code follow the next steps:
 - Download the data;
 
 ``cd ntb && bash download_data.bash``
-- Run a simple experiment. By default, these files are set to run SASRec on ml-100k dataset.
+- Run a simple experiment. By default, these files are set to run SASRec on ML-1M dataset.
 
 ``python3 main.py``
